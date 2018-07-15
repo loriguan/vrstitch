@@ -281,7 +281,7 @@ app::run(appParams *params)
 		sprintf(filename, "%s/Mugo_%s.flv", params->record_path.c_str(), timestr);
 		flvHandle_= flv_init( filename, 30, params->stitcher_properties.output_payloads->image_size.x, params->stitcher_properties.output_payloads->image_size.y);
 		/*sprintf(filename, "%s/test.mp4", params->record_path.c_str());
-		mp4fileHandle_ = MP4Create(filename);//´´½¨mp4ÎÄ¼þ
+		mp4fileHandle_ = MP4Create(filename);//Â´Â´Â½Â¨mp4ÃŽÃ„Â¼Ã¾
 		if (mp4fileHandle_ == MP4_INVALID_FILE_HANDLE)
 		{
 			printf("open file fialed.\n");
@@ -289,7 +289,7 @@ app::run(appParams *params)
 
 		MP4SetTimeScale(mp4fileHandle_, 90000);
 
-		//Ìí¼Óh264 track    
+		//ÃŒÃ­Â¼Ã“h264 track    
 		mp4VideoTrack_ = MP4AddH264VideoTrack(mp4fileHandle_, 90000, 90000 / 25, 3840, 2160,
 			0x64,//0x64, //sps[1] AVCProfileIndication
 			0x00, //sps[2] profile_compat
@@ -301,7 +301,7 @@ app::run(appParams *params)
 		}
 		//MP4SetVideoProfileLevel(mp4fileHandle_, 0x7F);
 
-		//Ìí¼ÓaacÒôÆµ
+		//ÃŒÃ­Â¼Ã“aacÃ’Ã´Ã†Âµ
 		if (params->audio_flag)
 		{
 			mp4AudioTrack_ = MP4AddAudioTrack(mp4fileHandle_, 44100, 1024, MP4_MPEG4_AUDIO_TYPE);
@@ -366,7 +366,7 @@ app::run(appParams *params)
 		//if(i==0)
 		//	sprintf(rtspurl, "rtsp://192.168.1.88/av0_0");
 		//else
-		sprintf(rtspurl, "rtsp://192.168.1.1%d/av0_0", i+1 ); //params->rig_properties.num_cameras - i
+		sprintf(rtspurl, "rtsp://10.233.233.1%d/av0_0", i+1 ); //params->rig_properties.num_cameras - i
 		s_videoSources[i]->init(rtspurl, i, this, params->audio_type=="ipcam");
 		if (params->record_flag)
 			s_videoSources[i]->setRecordPath(params->record_path);
