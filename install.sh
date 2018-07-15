@@ -93,10 +93,10 @@ install_srs(){
 
 
 install_nvstitch(){
-    tar -xzvf VRWorks_360_Video_1_5_Linux_SDK.tar.gz
+    tar -jzvf VRWorks_360_Video_1_5_Linux_SDK.tar.gz
     cd VRWorks_360_Video_SDK_1.5_Linux_package/samples
     mv nvstitch_sample nvstitch_sample-orig
-    git clone https://github.com/lipku/vrstitch.git nvstitch_sample
+    git clone https://github.com/loriguan/vrstitch.git nvstitch_sample
     cd ..
     mkdir build
     cd build
